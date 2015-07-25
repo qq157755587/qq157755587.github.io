@@ -1,27 +1,231 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  
-  <title><![CDATA[赵元杰的技术博客]]></title>
-  
-  <link href="/atom.xml" rel="self"/>
-  <link href="http://qq157755587.github.io//"/>
-  <updated>2015-07-25T04:29:47.000Z</updated>
-  <id>http://qq157755587.github.io//</id>
-  
-  <author>
-    <name><![CDATA[赵元杰]]></name>
+<!DOCTYPE html>
+<html lang="null">
     
-  </author>
-  
-  <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title><![CDATA[Kotlin学习笔记（一）基本语法]]></title>
-    <link href="http://qq157755587.github.io/2015/07/24/learning-kotlin-1/"/>
-    <id>http://qq157755587.github.io/2015/07/24/learning-kotlin-1/</id>
-    <published>2015-07-24T10:37:27.000Z</published>
-    <updated>2015-07-25T04:29:47.000Z</updated>
-    <content type="html"><![CDATA[<p>先提个问题</p>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="赵元杰的技术博客">
+    <title>Kotlin学习笔记（一）基本语法 - 赵元杰的技术博客</title>
+    <meta name="author" content="赵元杰">
+    <meta name="description" content="赵元杰的技术博客">
+    <link rel="icon" href="/assets/images/null">
+    
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="atom.xml">
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
+    <!--STYLES END-->
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-65290548-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</head>
+
+    <body>
+        <div id="blog">
+            <header id="header" data-behavior="1">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="http://qq157755587.github.io">赵元杰的技术博客</a>
+    </h1>
+    
+        <a class="header-right-picture" href="/#about">
+            <img class="header-picture" src="http://www.gravatar.com/avatar/f8ec0fb50db171bd93814bde2d3b9400?s=90"/>
+        </a>
+    
+</header>
+            <nav id="sidebar" data-behavior="1">
+    
+    <div class="sidebar-profile">
+        <a href="/#about">
+            
+            <img class="sidebar-profile-picture" src="http://www.gravatar.com/avatar/f8ec0fb50db171bd93814bde2d3b9400?s=90"/>
+            
+        </a>
+        <span class="sidebar-profile-name">赵元杰</span>
+    </div>
+    
+    
+    <ul class="sidebar-buttons">
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="/">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">Home</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="/all-categories">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">Categories</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="/all-tags">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">Tags</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="/all-archives">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">Archives</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link st-search-show-outputs" href="/#search">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">Search</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="/#about">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">About me</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+    <ul class="sidebar-buttons">
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="https://github.com/qq157755587" target="_blank">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                    <span class="sidebar-button-desc">GitHub</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="https://gist.github.com/qq157755587" target="_blank">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-github-square"></i>
+                    <span class="sidebar-button-desc">Gist</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="http://stackoverflow.com/users/2298397" target="_blank">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
+                    <span class="sidebar-button-desc">Stack Overflow</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="https://twitter.com/qq157755587" target="_blank">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+                    <span class="sidebar-button-desc">Twitter</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="https://www.facebook.com/profile.php?id=100007345843333" target="_blank">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-facebook"></i>
+                    <span class="sidebar-button-desc">Facebook</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="https://plus.google.com/u/0/114790614951350139361/posts" target="_blank">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-google-plus"></i>
+                    <span class="sidebar-button-desc">Google +</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="https://www.linkedin.com/profile/view?id=267600087" target="_blank">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+                    <span class="sidebar-button-desc">Linked In</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="mailto:qq157755587@gmail.com" target="_blank">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-envelope-o"></i>
+                    <span class="sidebar-button-desc">Mail</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+    <ul class="sidebar-buttons">
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="/atom.xml">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                    <span class="sidebar-button-desc">RSS</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+            <div id="main" data-behavior="1">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+        <div class="post-header main-content-wrap">
+    
+        <h1 class="post-title" itemprop="headline">Kotlin学习笔记（一）基本语法</h1>
+    
+    <div class="post-meta">
+    <time  itemprop="datePublished" content="Fri Jul 24 2015 18:37:27 GMT+0800">
+        Jul 24, 2015
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/Kotlin/">Kotlin</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown main-content-wrap" itemprop="articleBody">
+        <p>先提个问题</p>
 <h1 id="Android程序员为什么要学Kotlin？">Android程序员为什么要学Kotlin？</h1><ol>
 <li>Java不争气。在1.5时代Java或许还能和C#谈笑风生，而现在C#不知道比Java高明到哪里去了。虽然Java8中也加入了闭包等有用的特性，但Android又不支持……</li>
 <li><a href="https://github.com/ReactiveX/RxJava" target="_blank" rel="external">RxJava</a>。想象这样一个需求：用户连续点击某个区域10次且每次间隔不超过500毫秒，则触发一个彩蛋。<br>实现这个需求很容易，但代码会很混乱。我们得自己控制计时器，保存时间戳，可能还会有令人讨厌的空接口。如果用RxJava来做，几行代码就能搞定。如果再配合Kotlin的函数式编程，简直不能更爽~<br>关于RxJava的使用，网上已经有很多了。我有空了可能也会写一些。</li>
@@ -59,48 +263,189 @@
 <h1 id="collections">collections</h1><p>collections配合in使用很方便<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (text <span class="keyword">in</span> names) <span class="comment">// 这里调用了names.contains(text) </span></span><br><span class="line">    print(<span class="string">"Yes"</span>)</span><br></pre></td></tr></table></figure></p>
 <p>如果配合函数式编程和Lambdas表达式就不能更爽……<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">names filter &#123; it.startsWith(<span class="string">"A"</span>) &#125; </span><br><span class="line">      sortBy &#123; it &#125; </span><br><span class="line">	  map &#123; it.toUpperCase() &#125; </span><br><span class="line">	  forEach &#123; print(it) &#125;</span><br></pre></td></tr></table></figure></p>
 <p>注意这里函数前面没有小圆点（<strong>.</strong>），这个大概是特有的简写，后面再慢慢学吧~</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>先提个问题</p>
-<h1 id="Android程序员为什么要学Kotlin？">Android程序员为什么要学Kotlin？</h1><ol>
-<li>Java不争气。在1.5时代Java或许还能和C#谈笑风生，而现在C#不知道比Java高明到哪里去了。虽然Java8中]]>
-    </summary>
-    
-      <category term="syntax" scheme="http://qq157755587.github.io/tags/syntax/"/>
-    
-      <category term="Kotlin" scheme="http://qq157755587.github.io/categories/Kotlin/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[在Android中将文本转为曲线]]></title>
-    <link href="http://qq157755587.github.io/2015/07/18/android-convert-text-to-curves/"/>
-    <id>http://qq157755587.github.io/2015/07/18/android-convert-text-to-curves/</id>
-    <published>2015-07-18T08:09:27.000Z</published>
-    <updated>2015-07-20T10:24:14.000Z</updated>
-    <content type="html"><![CDATA[<p>最近在Android平台上生成PDF文件时，碰到了内嵌字体的问题。大部分打印厂的机器是不支持PDF内嵌字体的，<br>所以要想将文字按指定的字体印刷出来，只能<a href="http://baike.baidu.com/subview/8597409/8551998.htm" target="_blank" rel="external">转曲</a>。</p>
-<h1 id="转曲">转曲</h1><p>转曲的意思就是把文字转成曲线线段，可以想象成把文字的轮廓勾勒出来。<br>Android中的<a href="http://developer.android.com/reference/android/graphics/Paint.html#getTextPath(java.lang.String, int, int, float, float, android.graphics.Path" target="_blank" rel="external">Paint.getTextPath</a><br>方法可以获得String的Path，而<a href="http://developer.android.com/reference/android/graphics/PathMeasure.html" target="_blank" rel="external">PathMeasure</a>可以获得Path中的关键点。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Paint paint = <span class="keyword">new</span> Paint(Paint.ANTI_ALIAS_FLAG);</span><br><span class="line">paint.setTextSize(yourTextSize);</span><br><span class="line">Path fontPath = <span class="keyword">new</span> Path();</span><br><span class="line">paint.getTextPath(yourText, <span class="number">0</span>, yourText.length(), <span class="number">0f</span>, paint.getFontSpacing(), fontPath);</span><br><span class="line">PathMeasure pathMeasure = <span class="keyword">new</span> PathMeasure(fontPath, <span class="keyword">false</span>);</span><br><span class="line"><span class="keyword">float</span>[] pos = <span class="keyword">new</span> <span class="keyword">float</span>[<span class="number">2</span>]; <span class="comment">// pos用来存放每一个关键点</span></span><br><span class="line">do &#123;</span><br><span class="line">    <span class="keyword">float</span> distance = <span class="number">0f</span>;</span><br><span class="line">    <span class="keyword">while</span> (distance &lt; pathMeasure.getLength()) &#123;</span><br><span class="line">        pathMeasure.getPosTan(distance, pos, <span class="keyword">null</span>);</span><br><span class="line">        <span class="comment">// 在这里将pos设置到你自己的曲线里</span></span><br><span class="line">        <span class="comment">// 我使用PDFjet生成PDF，那么这里就将pos保存到com.pdfjet.Point中</span></span><br><span class="line">        distance += <span class="number">0.1f</span>; <span class="comment">// 0.1f是每个关键点的间隔。间隔越大轮廓越粗糙，反之越细腻。如果设的过小会影响性能。</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">while</span> (pathMeasure.nextContour());<span class="comment">// nextContour会跳到下一段曲线</span></span><br></pre></td></tr></table></figure>
-<h1 id="计算曲线嵌套层数">计算曲线嵌套层数</h1><p>得到文字曲线后还不能直接印刷，因为我们只是得到了文字的轮廓，还得往轮廓里填色。<br>当然不能所有轮廓都填黑色，这样文字会变成一坨一坨的黑色……<br>我们需要计算每条曲线被多少条曲线全包围（注意我们现在得到的曲线全都是头尾相连的）。<br>如果被偶数条曲线（包含0条）包围，则填黑色；如果被奇数条曲线包围，则填白色（底色）。<br>Android或Java本身不提供这样的方法，还好已经有人帮我们研究出方法了，详细参看<a href="http://alienryderflex.com/polygon/。" target="_blank" rel="external">http://alienryderflex.com/polygon/。</a></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Polygon</span> </span>&#123;</span><br><span class="line">    <span class="comment">// Polygon coodinates.</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">float</span>[] polyY, polyX;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// Number of sides in the polygon.</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> polySides;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * Default constructor.</span><br><span class="line">     * <span class="doctag">@param</span> px Polygon y coods.</span><br><span class="line">     * <span class="doctag">@param</span> py Polygon x coods.</span><br><span class="line">     * <span class="doctag">@param</span> ps Polygon sides count.</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Polygon</span><span class="params">( <span class="keyword">float</span>[] px, <span class="keyword">float</span>[] py, <span class="keyword">int</span> ps )</span> </span>&#123;</span><br><span class="line">        polyX = px;</span><br><span class="line">        polyY = py;</span><br><span class="line">        polySides = ps;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * Checks if the Polygon contains a point.</span><br><span class="line">     * <span class="doctag">@see</span> "http://alienryderflex.com/polygon/"</span><br><span class="line">     * <span class="doctag">@param</span> x Point horizontal pos.</span><br><span class="line">     * <span class="doctag">@param</span> y Point vertical pos.</span><br><span class="line">     * <span class="doctag">@return</span> Point is in Poly flag.</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">contains</span><span class="params">( <span class="keyword">float</span> x, <span class="keyword">float</span> y )</span> </span>&#123;</span><br><span class="line">        <span class="keyword">boolean</span> oddTransitions = <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span>, j = polySides -<span class="number">1</span>; i &lt; polySides; j = i++ ) &#123;</span><br><span class="line">            <span class="keyword">if</span>((Float.compare(polyY[i], y) &lt; <span class="number">0</span> &amp;&amp; Float.compare(polyY[j], y) &gt;= <span class="number">0</span> ) || ( Float.compare(polyY[j], y) &lt; <span class="number">0</span> &amp;&amp; Float.compare(polyY[i], y) &gt;= <span class="number">0</span>))&#123;</span><br><span class="line">                <span class="keyword">if</span>(Float.compare(polyX[i] + ( y - polyY[i] ) / ( polyY[j] - polyY[i] ) * ( polyX[j] - polyX[i] ), x) &lt; <span class="number">0</span> ) &#123;</span><br><span class="line">                    oddTransitions = !oddTransitions;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> oddTransitions;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Polygon的构造方法前两个参数填多边形（可以将曲线理解为多边形）横坐标和纵坐标的数组，第三个参数填多边形的边数，即坐标的个数。<br>contains方法即可检查某个点是否在这个多边形中。<br>那么思路就很简单了：如果曲线A的任一关键点不在曲线B中，B就没有包围A。<br>代码就不贴了。</p>
-<h1 id="填色">填色</h1><p>如上所述，如果被偶数条曲线包围，填黑色；被奇数条曲线包围，填白色。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> nestingNum = surroundedNumber(pathPointsList, pathPoints);</span><br><span class="line"><span class="keyword">if</span> (nestingNum % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">    paint.setColor(Color.BLACK);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    paint.setColor(Color.WHITE);</span><br><span class="line">&#125;</span><br><span class="line">canvas.drawPath(path, paint);</span><br></pre></td></tr></table></figure>
-<p>大功告成~</p>
-<p>详细代码请参考<a href="https://gist.github.com/qq157755587/32e927e77e259cd84631" target="_blank" rel="external">https://gist.github.com/qq157755587/32e927e77e259cd84631</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>最近在Android平台上生成PDF文件时，碰到了内嵌字体的问题。大部分打印厂的机器是不支持PDF内嵌字体的，<br>所以要想将文字按指定的字体印刷出来，只能<a href="http://baike.baidu.com/subview/8597409/8551998.ht]]>
-    </summary>
-    
-      <category term="PDF" scheme="http://qq157755587.github.io/tags/PDF/"/>
-    
-      <category term="Paint" scheme="http://qq157755587.github.io/tags/Paint/"/>
-    
-      <category term="Path" scheme="http://qq157755587.github.io/tags/Path/"/>
-    
-      <category term="Android" scheme="http://qq157755587.github.io/categories/Android/"/>
-    
-  </entry>
-  
-</feed>
+
+        
+    </div>
+    <div class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/syntax/">syntax</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/07/18/android-convert-text-to-curves/" data-tooltip="在Android中将文本转为曲线">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qq157755587.github.io/2015/07/24/learning-kotlin-1/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qq157755587.github.io/2015/07/24/learning-kotlin-1/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qq157755587.github.io/2015/07/24/learning-kotlin-1/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+
+        
+            <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2015 赵元杰. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/07/18/android-convert-text-to-curves/" data-tooltip="在Android中将文本转为曲线">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qq157755587.github.io/2015/07/24/learning-kotlin-1/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qq157755587.github.io/2015/07/24/learning-kotlin-1/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qq157755587.github.io/2015/07/24/learning-kotlin-1/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+
+                </div>
+            
+        </div>
+        <div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="http://www.gravatar.com/avatar/f8ec0fb50db171bd93814bde2d3b9400?s=110"/>
+        
+            <h4 id="about-card-name">赵元杰</h4>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>Andoird工程师</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                Wuhan
+            </h5>
+        
+    </div>
+</div>
+        <div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js" type="text/javascript"></script>
+<!--SCRIPTS END-->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'zhaoyuanjie';
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+    <script type="text/javascript">
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+                (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+            e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','SU2oWudfBg2KDR_wiXjF','2.0.0');
+    </script>
+
+
+</html>
