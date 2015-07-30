@@ -8,9 +8,38 @@
     <title>在Android中将文本转为曲线 - 赵元杰的技术博客</title>
     <meta name="author" content="赵元杰">
     <meta name="description" content="赵元杰的技术博客">
-    <link rel="icon" href="/assets/images/null">
     
-        <link rel="alternative" type="application/atom+xml" title="RSS" href="atom.xml">
+    
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="最近在Android平台上生成PDF文件时，碰到了内嵌字体的问题。大部分打印厂的机器是不支持PDF内嵌字体的，所以要想将文字按指定的字体印刷出来，只能转曲。
+转曲转曲的意思就是把文字转成曲线线段，可以想象成把文字的轮廓勾勒出来。Android中的Paint.getTextPath方法可以获得String的Path，而PathMeasure可以获得Path中的关键点。
+123456789101112">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="在Android中将文本转为曲线">
+<meta property="og:url" content="http://qq157755587.github.io/2015/07/18/android-convert-text-to-curves/index.html">
+<meta property="og:site_name" content="赵元杰的技术博客">
+<meta property="og:description" content="最近在Android平台上生成PDF文件时，碰到了内嵌字体的问题。大部分打印厂的机器是不支持PDF内嵌字体的，所以要想将文字按指定的字体印刷出来，只能转曲。
+转曲转曲的意思就是把文字转成曲线线段，可以想象成把文字的轮廓勾勒出来。Android中的Paint.getTextPath方法可以获得String的Path，而PathMeasure可以获得Path中的关键点。
+123456789101112">
+<meta property="og:updated_time" content="2015-07-20T10:24:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在Android中将文本转为曲线">
+<meta name="twitter:description" content="最近在Android平台上生成PDF文件时，碰到了内嵌字体的问题。大部分打印厂的机器是不支持PDF内嵌字体的，所以要想将文字按指定的字体印刷出来，只能转曲。
+转曲转曲的意思就是把文字转成曲线线段，可以想象成把文字的轮廓勾勒出来。Android中的Paint.getTextPath方法可以获得String的Path，而PathMeasure可以获得Path中的关键点。
+123456789101112">
+<meta name="twitter:creator" content="@qq157755587">
+    
+    
+        
+            <meta property="fb:admins" content="100007345843333" />
+        
+    
+    
+        <meta property="og:image" content="http://www.gravatar.com/avatar/f8ec0fb50db171bd93814bde2d3b9400?s=640"/>
+    
+    
+    
     
     <!--STYLES-->
     <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
@@ -34,7 +63,7 @@
             <header id="header" data-behavior="1">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
-        <a class="header-title-link" href="http://qq157755587.github.io">赵元杰的技术博客</a>
+        <a class="header-title-link" href="/ ">赵元杰的技术博客</a>
     </h1>
     
         <a class="header-right-picture" href="/#about">
@@ -58,7 +87,9 @@
         
         <li class="sidebar-button">
             
-                <a  class="sidebar-button-link " href="/">
+                <a  class="sidebar-button-link "
+                    href="/ 
+                    ">
             
                     <i class="sidebar-button-icon fa fa-lg fa-home"></i>
                     <span class="sidebar-button-desc">Home</span>
@@ -67,7 +98,9 @@
         
         <li class="sidebar-button">
             
-                <a  class="sidebar-button-link " href="/all-categories">
+                <a  class="sidebar-button-link "
+                    href="/all-categories
+                            ">
             
                     <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
                     <span class="sidebar-button-desc">Categories</span>
@@ -76,7 +109,9 @@
         
         <li class="sidebar-button">
             
-                <a  class="sidebar-button-link " href="/all-tags">
+                <a  class="sidebar-button-link "
+                    href="/all-tags
+                            ">
             
                     <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
                     <span class="sidebar-button-desc">Tags</span>
@@ -85,7 +120,9 @@
         
         <li class="sidebar-button">
             
-                <a  class="sidebar-button-link " href="/all-archives">
+                <a  class="sidebar-button-link "
+                    href="/all-archives
+                            ">
             
                     <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
                     <span class="sidebar-button-desc">Archives</span>
@@ -94,7 +131,9 @@
         
         <li class="sidebar-button">
             
-                <a  class="sidebar-button-link st-search-show-outputs" href="/#search">
+                <a  class="sidebar-button-link st-search-show-outputs"
+                    href="/#search
+                            ">
             
                     <i class="sidebar-button-icon fa fa-lg fa-search"></i>
                     <span class="sidebar-button-desc">Search</span>
@@ -103,7 +142,9 @@
         
         <li class="sidebar-button">
             
-                <a  class="sidebar-button-link " href="/#about">
+                <a  class="sidebar-button-link "
+                    href="/#about
+                            ">
             
                     <i class="sidebar-button-icon fa fa-lg fa-question"></i>
                     <span class="sidebar-button-desc">About me</span>
@@ -192,7 +233,9 @@
         
         <li class="sidebar-button">
             
-                <a  class="sidebar-button-link " href="/atom.xml">
+                <a  class="sidebar-button-link "
+                    href="/atom.xml
+                            ">
             
                     <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
                     <span class="sidebar-button-desc">RSS</span>
@@ -225,7 +268,8 @@
 </div>
     
     <div class="post-content markdown main-content-wrap" itemprop="articleBody">
-        <p>最近在Android平台上生成PDF文件时，碰到了内嵌字体的问题。大部分打印厂的机器是不支持PDF内嵌字体的，<br>所以要想将文字按指定的字体印刷出来，只能<a href="http://baike.baidu.com/subview/8597409/8551998.htm" target="_blank" rel="external">转曲</a>。</p>
+        
+            <p>最近在Android平台上生成PDF文件时，碰到了内嵌字体的问题。大部分打印厂的机器是不支持PDF内嵌字体的，<br>所以要想将文字按指定的字体印刷出来，只能<a href="http://baike.baidu.com/subview/8597409/8551998.htm" target="_blank" rel="external">转曲</a>。</p>
 <h1 id="转曲">转曲</h1><p>转曲的意思就是把文字转成曲线线段，可以想象成把文字的轮廓勾勒出来。<br>Android中的<a href="http://developer.android.com/reference/android/graphics/Paint.html#getTextPath(java.lang.String, int, int, float, float, android.graphics.Path" target="_blank" rel="external">Paint.getTextPath</a><br>方法可以获得String的Path，而<a href="http://developer.android.com/reference/android/graphics/PathMeasure.html" target="_blank" rel="external">PathMeasure</a>可以获得Path中的关键点。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Paint paint = <span class="keyword">new</span> Paint(Paint.ANTI_ALIAS_FLAG);</span><br><span class="line">paint.setTextSize(yourTextSize);</span><br><span class="line">Path fontPath = <span class="keyword">new</span> Path();</span><br><span class="line">paint.getTextPath(yourText, <span class="number">0</span>, yourText.length(), <span class="number">0f</span>, paint.getFontSpacing(), fontPath);</span><br><span class="line">PathMeasure pathMeasure = <span class="keyword">new</span> PathMeasure(fontPath, <span class="keyword">false</span>);</span><br><span class="line"><span class="keyword">float</span>[] pos = <span class="keyword">new</span> <span class="keyword">float</span>[<span class="number">2</span>]; <span class="comment">// pos用来存放每一个关键点</span></span><br><span class="line">do &#123;</span><br><span class="line">    <span class="keyword">float</span> distance = <span class="number">0f</span>;</span><br><span class="line">    <span class="keyword">while</span> (distance &lt; pathMeasure.getLength()) &#123;</span><br><span class="line">        pathMeasure.getPosTan(distance, pos, <span class="keyword">null</span>);</span><br><span class="line">        <span class="comment">// 在这里将pos设置到你自己的曲线里</span></span><br><span class="line">        <span class="comment">// 我使用PDFjet生成PDF，那么这里就将pos保存到com.pdfjet.Point中</span></span><br><span class="line">        distance += <span class="number">0.1f</span>; <span class="comment">// 0.1f是每个关键点的间隔。间隔越大轮廓越粗糙，反之越细腻。如果设的过小会影响性能。</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">while</span> (pathMeasure.nextContour());<span class="comment">// nextContour会跳到下一段曲线</span></span><br></pre></td></tr></table></figure>
 <h1 id="计算曲线嵌套层数">计算曲线嵌套层数</h1><p>得到文字曲线后还不能直接印刷，因为我们只是得到了文字的轮廓，还得往轮廓里填色。<br>当然不能所有轮廓都填黑色，这样文字会变成一坨一坨的黑色……<br>我们需要计算每条曲线被多少条曲线全包围（注意我们现在得到的曲线全都是头尾相连的）。<br>如果被偶数条曲线（包含0条）包围，则填黑色；如果被奇数条曲线包围，则填白色（底色）。<br>Android或Java本身不提供这样的方法，还好已经有人帮我们研究出方法了，详细参看<a href="http://alienryderflex.com/polygon/。" target="_blank" rel="external">http://alienryderflex.com/polygon/。</a></p>
@@ -236,6 +280,7 @@
 <p>大功告成~</p>
 <p>详细代码请参考<a href="https://gist.github.com/qq157755587/32e927e77e259cd84631" target="_blank" rel="external">https://gist.github.com/qq157755587/32e927e77e259cd84631</a></p>
 
+        
         
     </div>
     <div class="post-footer main-content-wrap">
@@ -269,32 +314,42 @@
         </ul>
     </nav>
     <ul class="post-actions post-action-share">
-        <li class="post-action">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qq157755587.github.io/2015/07/18/android-convert-text-to-curves/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
-        <li class="post-action">
+        <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qq157755587.github.io/2015/07/18/android-convert-text-to-curves/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
-        <li class="post-action">
+        <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qq157755587.github.io/2015/07/18/android-convert-text-to-curves/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
         
-            <li class="post-action hide-xs">
+            <li class="post-action">
                 <a class="post-action-btn btn btn--default" href="#disqus_thread">
                     <i class="fa fa-comment-o"></i>
                 </a>
             </li>
         
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
     </ul>
 </div>
-
-
         
             <div id="disqus_thread">
     <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
@@ -336,33 +391,63 @@
         </ul>
     </nav>
     <ul class="post-actions post-action-share">
-        <li class="post-action">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qq157755587.github.io/2015/07/18/android-convert-text-to-curves/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
-        <li class="post-action">
+        <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qq157755587.github.io/2015/07/18/android-convert-text-to-curves/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
-        <li class="post-action">
+        <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qq157755587.github.io/2015/07/18/android-convert-text-to-curves/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
         
-            <li class="post-action hide-xs">
+            <li class="post-action">
                 <a class="post-action-btn btn btn--default" href="#disqus_thread">
                     <i class="fa fa-comment-o"></i>
                 </a>
             </li>
         
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
     </ul>
 </div>
-
-
                 </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qq157755587.github.io/2015/07/18/android-convert-text-to-curves/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qq157755587.github.io/2015/07/18/android-convert-text-to-curves/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://qq157755587.github.io/2015/07/18/android-convert-text-to-curves/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
             
         </div>
         <div id="about">

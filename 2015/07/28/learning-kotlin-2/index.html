@@ -8,9 +8,116 @@
     <title>Kotlin学习笔记（二）基本类型 - 赵元杰的技术博客</title>
     <meta name="author" content="赵元杰">
     <meta name="description" content="赵元杰的技术博客">
-    <link rel="icon" href="/assets/images/null">
     
-        <link rel="alternative" type="application/atom+xml" title="RSS" href="atom.xml">
+    
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="如果你学过Ruby，你一定知道“万物皆对象”。Kotlin中也一样。即便数字(Numbers)在Kotlin中是基本类型，也可以这样写：123.toString()
+下面我们来看一下Kotlin中的基本类型。
+NumbersKotlin提供的数字类型和Java很像：
+
+
+
+Type
+Bitwidth
+
+
+
+
+Double
+64
+
+
+Float
+32
+
+
+Long
+64
+
+
+Int
+32
+
+
+Sho">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Kotlin学习笔记（二）基本类型">
+<meta property="og:url" content="http://qq157755587.github.io/2015/07/28/learning-kotlin-2/index.html">
+<meta property="og:site_name" content="赵元杰的技术博客">
+<meta property="og:description" content="如果你学过Ruby，你一定知道“万物皆对象”。Kotlin中也一样。即便数字(Numbers)在Kotlin中是基本类型，也可以这样写：123.toString()
+下面我们来看一下Kotlin中的基本类型。
+NumbersKotlin提供的数字类型和Java很像：
+
+
+
+Type
+Bitwidth
+
+
+
+
+Double
+64
+
+
+Float
+32
+
+
+Long
+64
+
+
+Int
+32
+
+
+Sho">
+<meta property="og:updated_time" content="2015-07-30T09:51:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kotlin学习笔记（二）基本类型">
+<meta name="twitter:description" content="如果你学过Ruby，你一定知道“万物皆对象”。Kotlin中也一样。即便数字(Numbers)在Kotlin中是基本类型，也可以这样写：123.toString()
+下面我们来看一下Kotlin中的基本类型。
+NumbersKotlin提供的数字类型和Java很像：
+
+
+
+Type
+Bitwidth
+
+
+
+
+Double
+64
+
+
+Float
+32
+
+
+Long
+64
+
+
+Int
+32
+
+
+Sho">
+<meta name="twitter:creator" content="@qq157755587">
+    
+    
+        
+            <meta property="fb:admins" content="100007345843333" />
+        
+    
+    
+        <meta property="og:image" content="http://www.gravatar.com/avatar/f8ec0fb50db171bd93814bde2d3b9400?s=640"/>
+    
+    
+    
     
     <!--STYLES-->
     <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
@@ -34,7 +141,7 @@
             <header id="header" data-behavior="1">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
-        <a class="header-title-link" href="http://qq157755587.github.io">赵元杰的技术博客</a>
+        <a class="header-title-link" href="/ ">赵元杰的技术博客</a>
     </h1>
     
         <a class="header-right-picture" href="/#about">
@@ -58,7 +165,9 @@
         
         <li class="sidebar-button">
             
-                <a  class="sidebar-button-link " href="/">
+                <a  class="sidebar-button-link "
+                    href="/ 
+                    ">
             
                     <i class="sidebar-button-icon fa fa-lg fa-home"></i>
                     <span class="sidebar-button-desc">Home</span>
@@ -67,7 +176,9 @@
         
         <li class="sidebar-button">
             
-                <a  class="sidebar-button-link " href="/all-categories">
+                <a  class="sidebar-button-link "
+                    href="/all-categories
+                            ">
             
                     <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
                     <span class="sidebar-button-desc">Categories</span>
@@ -76,7 +187,9 @@
         
         <li class="sidebar-button">
             
-                <a  class="sidebar-button-link " href="/all-tags">
+                <a  class="sidebar-button-link "
+                    href="/all-tags
+                            ">
             
                     <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
                     <span class="sidebar-button-desc">Tags</span>
@@ -85,7 +198,9 @@
         
         <li class="sidebar-button">
             
-                <a  class="sidebar-button-link " href="/all-archives">
+                <a  class="sidebar-button-link "
+                    href="/all-archives
+                            ">
             
                     <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
                     <span class="sidebar-button-desc">Archives</span>
@@ -94,7 +209,9 @@
         
         <li class="sidebar-button">
             
-                <a  class="sidebar-button-link st-search-show-outputs" href="/#search">
+                <a  class="sidebar-button-link st-search-show-outputs"
+                    href="/#search
+                            ">
             
                     <i class="sidebar-button-icon fa fa-lg fa-search"></i>
                     <span class="sidebar-button-desc">Search</span>
@@ -103,7 +220,9 @@
         
         <li class="sidebar-button">
             
-                <a  class="sidebar-button-link " href="/#about">
+                <a  class="sidebar-button-link "
+                    href="/#about
+                            ">
             
                     <i class="sidebar-button-icon fa fa-lg fa-question"></i>
                     <span class="sidebar-button-desc">About me</span>
@@ -192,7 +311,9 @@
         
         <li class="sidebar-button">
             
-                <a  class="sidebar-button-link " href="/atom.xml">
+                <a  class="sidebar-button-link "
+                    href="/atom.xml
+                            ">
             
                     <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
                     <span class="sidebar-button-desc">RSS</span>
@@ -225,7 +346,8 @@
 </div>
     
     <div class="post-content markdown main-content-wrap" itemprop="articleBody">
-        <p>如果你学过Ruby，你一定知道“万物皆对象”。Kotlin中也一样。即便数字(Numbers)在Kotlin中是基本类型，也可以这样写：<code>123.toString()</code></p>
+        
+            <p>如果你学过Ruby，你一定知道“万物皆对象”。Kotlin中也一样。即便数字(Numbers)在Kotlin中是基本类型，也可以这样写：<code>123.toString()</code></p>
 <p>下面我们来看一下Kotlin中的基本类型。</p>
 <h1 id="Numbers">Numbers</h1><p>Kotlin提供的数字类型和Java很像：</p>
 <table>
@@ -320,6 +442,7 @@
 <p><em>这篇是用<a href="http://typora.io/" target="_blank" rel="external">Typora</a>写的，确实很好用，而且是国人出品！</em></p>
 
         
+        
     </div>
     <div class="post-footer main-content-wrap">
         
@@ -352,32 +475,42 @@
         </ul>
     </nav>
     <ul class="post-actions post-action-share">
-        <li class="post-action">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qq157755587.github.io/2015/07/28/learning-kotlin-2/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
-        <li class="post-action">
+        <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qq157755587.github.io/2015/07/28/learning-kotlin-2/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
-        <li class="post-action">
+        <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qq157755587.github.io/2015/07/28/learning-kotlin-2/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
         
-            <li class="post-action hide-xs">
+            <li class="post-action">
                 <a class="post-action-btn btn btn--default" href="#disqus_thread">
                     <i class="fa fa-comment-o"></i>
                 </a>
             </li>
         
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
     </ul>
 </div>
-
-
         
             <div id="disqus_thread">
     <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
@@ -419,33 +552,63 @@
         </ul>
     </nav>
     <ul class="post-actions post-action-share">
-        <li class="post-action">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qq157755587.github.io/2015/07/28/learning-kotlin-2/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
-        <li class="post-action">
+        <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qq157755587.github.io/2015/07/28/learning-kotlin-2/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
-        <li class="post-action">
+        <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qq157755587.github.io/2015/07/28/learning-kotlin-2/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
         
-            <li class="post-action hide-xs">
+            <li class="post-action">
                 <a class="post-action-btn btn btn--default" href="#disqus_thread">
                     <i class="fa fa-comment-o"></i>
                 </a>
             </li>
         
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
     </ul>
 </div>
-
-
                 </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qq157755587.github.io/2015/07/28/learning-kotlin-2/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qq157755587.github.io/2015/07/28/learning-kotlin-2/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://qq157755587.github.io/2015/07/28/learning-kotlin-2/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
             
         </div>
         <div id="about">

@@ -8,9 +8,41 @@
     <title>Kotlin学习笔记（一）基本语法 - 赵元杰的技术博客</title>
     <meta name="author" content="赵元杰">
     <meta name="description" content="赵元杰的技术博客">
-    <link rel="icon" href="/assets/images/null">
     
-        <link rel="alternative" type="application/atom+xml" title="RSS" href="atom.xml">
+    
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="先提个问题
+Android程序员为什么要学Kotlin？
+Java不争气。在1.5时代Java或许还能和C#谈笑风生，而现在C#不知道比Java高明到哪里去了。虽然Java8中也加入了闭包等有用的特性，但Android又不支持……
+RxJava。想象这样一个需求：用户连续点击某个区域10次且每次间隔不超过500毫秒，则触发一个彩蛋。实现这个需求很容易，但代码会很混乱。我们得自己控制计时器，保存时间">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Kotlin学习笔记（一）基本语法">
+<meta property="og:url" content="http://qq157755587.github.io/2015/07/24/learning-kotlin-1/index.html">
+<meta property="og:site_name" content="赵元杰的技术博客">
+<meta property="og:description" content="先提个问题
+Android程序员为什么要学Kotlin？
+Java不争气。在1.5时代Java或许还能和C#谈笑风生，而现在C#不知道比Java高明到哪里去了。虽然Java8中也加入了闭包等有用的特性，但Android又不支持……
+RxJava。想象这样一个需求：用户连续点击某个区域10次且每次间隔不超过500毫秒，则触发一个彩蛋。实现这个需求很容易，但代码会很混乱。我们得自己控制计时器，保存时间">
+<meta property="og:updated_time" content="2015-07-25T12:01:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kotlin学习笔记（一）基本语法">
+<meta name="twitter:description" content="先提个问题
+Android程序员为什么要学Kotlin？
+Java不争气。在1.5时代Java或许还能和C#谈笑风生，而现在C#不知道比Java高明到哪里去了。虽然Java8中也加入了闭包等有用的特性，但Android又不支持……
+RxJava。想象这样一个需求：用户连续点击某个区域10次且每次间隔不超过500毫秒，则触发一个彩蛋。实现这个需求很容易，但代码会很混乱。我们得自己控制计时器，保存时间">
+<meta name="twitter:creator" content="@qq157755587">
+    
+    
+        
+            <meta property="fb:admins" content="100007345843333" />
+        
+    
+    
+        <meta property="og:image" content="http://www.gravatar.com/avatar/f8ec0fb50db171bd93814bde2d3b9400?s=640"/>
+    
+    
+    
     
     <!--STYLES-->
     <link rel="stylesheet" href="/assets/css/style.min.css" type="text/css">
@@ -34,7 +66,7 @@
             <header id="header" data-behavior="1">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
-        <a class="header-title-link" href="http://qq157755587.github.io">赵元杰的技术博客</a>
+        <a class="header-title-link" href="/ ">赵元杰的技术博客</a>
     </h1>
     
         <a class="header-right-picture" href="/#about">
@@ -58,7 +90,9 @@
         
         <li class="sidebar-button">
             
-                <a  class="sidebar-button-link " href="/">
+                <a  class="sidebar-button-link "
+                    href="/ 
+                    ">
             
                     <i class="sidebar-button-icon fa fa-lg fa-home"></i>
                     <span class="sidebar-button-desc">Home</span>
@@ -67,7 +101,9 @@
         
         <li class="sidebar-button">
             
-                <a  class="sidebar-button-link " href="/all-categories">
+                <a  class="sidebar-button-link "
+                    href="/all-categories
+                            ">
             
                     <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
                     <span class="sidebar-button-desc">Categories</span>
@@ -76,7 +112,9 @@
         
         <li class="sidebar-button">
             
-                <a  class="sidebar-button-link " href="/all-tags">
+                <a  class="sidebar-button-link "
+                    href="/all-tags
+                            ">
             
                     <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
                     <span class="sidebar-button-desc">Tags</span>
@@ -85,7 +123,9 @@
         
         <li class="sidebar-button">
             
-                <a  class="sidebar-button-link " href="/all-archives">
+                <a  class="sidebar-button-link "
+                    href="/all-archives
+                            ">
             
                     <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
                     <span class="sidebar-button-desc">Archives</span>
@@ -94,7 +134,9 @@
         
         <li class="sidebar-button">
             
-                <a  class="sidebar-button-link st-search-show-outputs" href="/#search">
+                <a  class="sidebar-button-link st-search-show-outputs"
+                    href="/#search
+                            ">
             
                     <i class="sidebar-button-icon fa fa-lg fa-search"></i>
                     <span class="sidebar-button-desc">Search</span>
@@ -103,7 +145,9 @@
         
         <li class="sidebar-button">
             
-                <a  class="sidebar-button-link " href="/#about">
+                <a  class="sidebar-button-link "
+                    href="/#about
+                            ">
             
                     <i class="sidebar-button-icon fa fa-lg fa-question"></i>
                     <span class="sidebar-button-desc">About me</span>
@@ -192,7 +236,9 @@
         
         <li class="sidebar-button">
             
-                <a  class="sidebar-button-link " href="/atom.xml">
+                <a  class="sidebar-button-link "
+                    href="/atom.xml
+                            ">
             
                     <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
                     <span class="sidebar-button-desc">RSS</span>
@@ -225,7 +271,8 @@
 </div>
     
     <div class="post-content markdown main-content-wrap" itemprop="articleBody">
-        <p>先提个问题</p>
+        
+            <p>先提个问题</p>
 <h1 id="Android程序员为什么要学Kotlin？">Android程序员为什么要学Kotlin？</h1><ol>
 <li>Java不争气。在1.5时代Java或许还能和C#谈笑风生，而现在C#不知道比Java高明到哪里去了。虽然Java8中也加入了闭包等有用的特性，但Android又不支持……</li>
 <li><a href="https://github.com/ReactiveX/RxJava" target="_blank" rel="external">RxJava</a>。想象这样一个需求：用户连续点击某个区域10次且每次间隔不超过500毫秒，则触发一个彩蛋。<br>实现这个需求很容易，但代码会很混乱。我们得自己控制计时器，保存时间戳，可能还会有令人讨厌的空接口。如果用RxJava来做，几行代码就能搞定。如果再配合Kotlin的函数式编程，简直不能更爽~<br>关于RxJava的使用，网上已经有很多了。我有空了可能也会写一些。</li>
@@ -266,6 +313,7 @@
 <p>注意这里函数前面没有小圆点（<strong>.</strong>），这个大概是特有的简写，后面再慢慢学吧~</p>
 
         
+        
     </div>
     <div class="post-footer main-content-wrap">
         
@@ -298,32 +346,42 @@
         </ul>
     </nav>
     <ul class="post-actions post-action-share">
-        <li class="post-action">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qq157755587.github.io/2015/07/24/learning-kotlin-1/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
-        <li class="post-action">
+        <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qq157755587.github.io/2015/07/24/learning-kotlin-1/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
-        <li class="post-action">
+        <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qq157755587.github.io/2015/07/24/learning-kotlin-1/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
         
-            <li class="post-action hide-xs">
+            <li class="post-action">
                 <a class="post-action-btn btn btn--default" href="#disqus_thread">
                     <i class="fa fa-comment-o"></i>
                 </a>
             </li>
         
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
     </ul>
 </div>
-
-
         
             <div id="disqus_thread">
     <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
@@ -365,33 +423,63 @@
         </ul>
     </nav>
     <ul class="post-actions post-action-share">
-        <li class="post-action">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qq157755587.github.io/2015/07/24/learning-kotlin-1/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
-        <li class="post-action">
+        <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qq157755587.github.io/2015/07/24/learning-kotlin-1/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
-        <li class="post-action">
+        <li class="post-action hide-xs">
             <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qq157755587.github.io/2015/07/24/learning-kotlin-1/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
         
-            <li class="post-action hide-xs">
+            <li class="post-action">
                 <a class="post-action-btn btn btn--default" href="#disqus_thread">
                     <i class="fa fa-comment-o"></i>
                 </a>
             </li>
         
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
     </ul>
 </div>
-
-
                 </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qq157755587.github.io/2015/07/24/learning-kotlin-1/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qq157755587.github.io/2015/07/24/learning-kotlin-1/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://qq157755587.github.io/2015/07/24/learning-kotlin-1/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
             
         </div>
         <div id="about">
