@@ -5,7 +5,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://qq157755587.github.io//"/>
-  <updated>2015-07-30T09:48:33.000Z</updated>
+  <updated>2015-07-30T09:51:37.000Z</updated>
   <id>http://qq157755587.github.io//</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://qq157755587.github.io/2015/07/28/learning-kotlin-2/"/>
     <id>http://qq157755587.github.io/2015/07/28/learning-kotlin-2/</id>
     <published>2015-07-28T10:31:26.000Z</published>
-    <updated>2015-07-30T09:48:33.000Z</updated>
+    <updated>2015-07-30T09:51:37.000Z</updated>
     <content type="html"><![CDATA[<p>如果你学过Ruby，你一定知道“万物皆对象”。Kotlin中也一样。即便数字(Numbers)在Kotlin中是基本类型，也可以这样写：<code>123.toString()</code></p>
 <p>下面我们来看一下Kotlin中的基本类型。</p>
 <h1 id="Numbers">Numbers</h1><p>Kotlin提供的数字类型和Java很像：</p>
@@ -121,7 +121,15 @@
 <h1 id="]]>
     </summary>
     
-      <category term="-number -character -boolean -string -array" scheme="http://qq157755587.github.io/tags/number-character-boolean-string-array/"/>
+      <category term="array" scheme="http://qq157755587.github.io/tags/array/"/>
+    
+      <category term="boolean" scheme="http://qq157755587.github.io/tags/boolean/"/>
+    
+      <category term="character" scheme="http://qq157755587.github.io/tags/character/"/>
+    
+      <category term="number" scheme="http://qq157755587.github.io/tags/number/"/>
+    
+      <category term="string" scheme="http://qq157755587.github.io/tags/string/"/>
     
       <category term="Kotlin" scheme="http://qq157755587.github.io/categories/Kotlin/"/>
     
