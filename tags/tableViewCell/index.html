@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="赵元杰的技术博客">
-    <title>all-categories - 赵元杰的技术博客</title>
+    <title>Tag : tableViewCell - 赵元杰的技术博客</title>
     <meta name="author" content="赵元杰">
     <meta name="description" content="赵元杰的技术博客">
     
@@ -14,13 +14,12 @@
     
     <meta name="description">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="all-categories">
-<meta property="og:url" content="http://qq157755587.github.io/all-categories/index.html">
+<meta property="og:title" content="赵元杰的技术博客">
+<meta property="og:url" content="http://qq157755587.github.io/tags/tableViewCell/index.html">
 <meta property="og:site_name" content="赵元杰的技术博客">
 <meta property="og:description">
-<meta property="og:updated_time" content="2015-07-18T07:21:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="all-categories">
+<meta name="twitter:title" content="赵元杰的技术博客">
 <meta name="twitter:description">
 <meta name="twitter:creator" content="@qq157755587">
     
@@ -240,91 +239,65 @@
     
 </nav>
             <div id="main" data-behavior="1">
-                <div id="categories-archives" class="main-content-wrap">
-    <form id="filter-form" action="##">
-        <input name="category" type="text" class="form-control input--xlarge" placeholder="Search a category" autofocus="autofocus">
-    </form>
-    <h4 class="archive-result text-color-base text-xlarge"></h4>
-    <section>
+                
+    
+<section class="post-group main-content-wrap">
+    
         
-            <a class="category category--small category--primary" href="#posts-list-Android" data-category="android">
-                Android
-            </a>
         
-            <a class="category category--small category--primary" href="#posts-list-Kotlin" data-category="kotlin">
-                Kotlin
-            </a>
+                <article class="post" itemscope itemType="http://schema.org/BlogPosting">
         
-            <a class="category category--small category--primary" href="#posts-list-iOS" data-category="ios">
-                iOS
-            </a>
+            <div class="post-wrap">
+                <div class="post-header">
+                    <h1 class="post-title" itemprop="headline">
+                        
+                                <a class="link-unstyled" href="/2015/08/19/custom-table-view-cell/">快速自定义tableViewCell</a>
+                        
+                    </h1>
+                    <div class="post-meta">
+    <time  itemprop="datePublished" content="Wed Aug 19 2015 20:47:01 GMT+0800">
+        Aug 19, 2015
+    </time>
+    
+        <span>in </span>
         
-    </section>
-    <section class="boxes">
-        
-            
-                <div id="posts-list-Android" class="archive box" data-category="android">
-                    <h4 class="archive-title">
-                        <a class="link-unstyled" href="/categories/Android">Android (1)</a>
-                    </h4>
-                    <ul class="archive-posts">
-                        
-                            <li class="archive-post">
-                                <a class="archive-post-title" href="/2015/07/18/android-convert-text-to-curves/">在Android中将文本转为曲线</a>
-                                <span class="archive-post-date"> - 18/07/2015</span>
-                            </li>
-                        
-                        
-                    </ul>
-                </div>
-            
-        
-            
-                <div id="posts-list-Kotlin" class="archive box" data-category="kotlin">
-                    <h4 class="archive-title">
-                        <a class="link-unstyled" href="/categories/Kotlin">Kotlin (3)</a>
-                    </h4>
-                    <ul class="archive-posts">
-                        
-                            <li class="archive-post">
-                                <a class="archive-post-title" href="/2015/08/08/learning-kotlin-3/">Kotlin学习笔记（三）控制流程</a>
-                                <span class="archive-post-date"> - 08/08/2015</span>
-                            </li>
-                        
-                            <li class="archive-post">
-                                <a class="archive-post-title" href="/2015/07/28/learning-kotlin-2/">Kotlin学习笔记（二）基本类型</a>
-                                <span class="archive-post-date"> - 28/07/2015</span>
-                            </li>
-                        
-                            <li class="archive-post">
-                                <a class="archive-post-title" href="/2015/07/24/learning-kotlin-1/">Kotlin学习笔记（一）基本语法</a>
-                                <span class="archive-post-date"> - 24/07/2015</span>
-                            </li>
-                        
-                        
-                    </ul>
-                </div>
-            
-        
-            
-                <div id="posts-list-iOS" class="archive box" data-category="ios">
-                    <h4 class="archive-title">
-                        <a class="link-unstyled" href="/categories/iOS">iOS (1)</a>
-                    </h4>
-                    <ul class="archive-posts">
-                        
-                            <li class="archive-post">
-                                <a class="archive-post-title" href="/2015/08/19/custom-table-view-cell/">快速自定义tableViewCell</a>
-                                <span class="archive-post-date"> - 19/08/2015</span>
-                            </li>
-                        
-                        
-                    </ul>
-                </div>
-            
-        
-    </section>
+    <a class="category-link" href="/categories/iOS/">iOS</a>
+
+
+    
 </div>
+                </div>
+                <div class="post-excerpt" itemprop="articleBody">
+                    
+                        <p>
+                            最近因为工作需要开始学习iOS。在网上搜自动定义tableViewCell，出来的结果都是要新建xib文件和对应的class，然后在上面添加控件，再注册到tableViewController中。这样做一来很繁琐，二来很容易在绑定outlet的时候抛异常（我就遇到了）。同事告诉我一个快捷的办法。
+1、直接在StoryBoard里面将控件添加到Prototype Cell中。
+
+2、新增一个Clas<br>
+                    
+                    
+                        
+                            <a href="/2015/08/19/custom-table-view-cell/" class="post-excerpt_link link ">Continue reading</a>
+                            
+                        
+                    
+                    
+                        </p>
+                    
+                </div>
+            </div>
+            
+        </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
+        
+        
+        <li class="pagination-number">Page 1 of 1</li>
+    </ul>
+</div>
+</section>
+
                 <footer id="footer" class="main-content-wrap">
     <span class="copyrights">
         Copyrights &copy; 2015 赵元杰. All Rights Reserved.

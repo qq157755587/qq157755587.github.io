@@ -5,7 +5,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://qq157755587.github.io//"/>
-  <updated>2015-08-08T08:06:59.000Z</updated>
+  <updated>2015-08-19T13:11:43.000Z</updated>
   <id>http://qq157755587.github.io//</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[快速自定义tableViewCell]]></title>
+    <link href="http://qq157755587.github.io/2015/08/19/custom-table-view-cell/"/>
+    <id>http://qq157755587.github.io/2015/08/19/custom-table-view-cell/</id>
+    <published>2015-08-19T12:47:01.000Z</published>
+    <updated>2015-08-19T13:11:43.000Z</updated>
+    <content type="html"><![CDATA[<p>最近因为工作需要开始学习iOS。在网上搜自动定义tableViewCell，出来的结果都是要新建xib文件和对应的class，然后在上面添加控件，再注册到tableViewController中。<br>这样做一来很繁琐，二来很容易在绑定outlet的时候抛异常（我就遇到了）。同事告诉我一个快捷的办法。</p>
+<p>1、直接在StoryBoard里面将控件添加到Prototype Cell中。</p>
+<p><img src="tableViewCell.png" alt="Image of tableViewCell"></p>
+<p>2、新增一个Class（比如MyTableViewCell）继承UITableViewCell。</p>
+<p>3、将Prototype Cell的Class设为MyTableViewCell。</p>
+<p>4、按住<em>control</em>将控件拖到MyTableViewCell中，添加outlet。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@property (nonatomic, strong) IBOutlet UILable *label;&#10;@property (nonatomic, strong) IBOutlet UIImageView *image;</span><br></pre></td></tr></table></figure></p>
+<p>5、直接调用<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELL_IDENTITY forIndexPath:indexPath];</span><br></pre></td></tr></table></figure></p>
+<p>搞定~</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>最近因为工作需要开始学习iOS。在网上搜自动定义tableViewCell，出来的结果都是要新建xib文件和对应的class，然后在上面添加控件，再注册到tableViewController中。<br>这样做一来很繁琐，二来很容易在绑定outlet的时候抛异常（我就遇到了]]>
+    </summary>
+    
+      <category term="tableViewCell" scheme="http://qq157755587.github.io/tags/tableViewCell/"/>
+    
+      <category term="iOS" scheme="http://qq157755587.github.io/categories/iOS/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Kotlin学习笔记（三）控制流程]]></title>
