@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="null">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="赵元杰的技术博客">
+    <title>kotlin 开篇 - 赵元杰的技术博客</title>
+    <meta name="author" content="赵元杰">
+    <meta name="description" content="赵元杰的技术博客">
+    
+    
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="Kotlin 开篇这篇文章是为「码上开学」写的，首发于码上开学官网 。 引子 找到那把三叉戟，你便能号令整个海洋。     ——《海王》  为什么需要新语言Java是当今世界最流行的工业级语言，有着非常成熟的生态和广泛的开发群体。当初Android选择Java作为开发语言，也是为了吸引Java程序员这个世界上最大的开发群体。最早的一批Android程序员可能已经用Java写了近十年Android程">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="kotlin 开篇">
+<meta property="og:url" content="http://qq157755587.github.io/2019/06/27/kotlin-opening/index.html">
+<meta property="og:site_name" content="赵元杰的技术博客">
+<meta property="og:description" content="Kotlin 开篇这篇文章是为「码上开学」写的，首发于码上开学官网 。 引子 找到那把三叉戟，你便能号令整个海洋。     ——《海王》  为什么需要新语言Java是当今世界最流行的工业级语言，有着非常成熟的生态和广泛的开发群体。当初Android选择Java作为开发语言，也是为了吸引Java程序员这个世界上最大的开发群体。最早的一批Android程序员可能已经用Java写了近十年Android程">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-06-27T09:06:30.018Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="kotlin 开篇">
+<meta name="twitter:description" content="Kotlin 开篇这篇文章是为「码上开学」写的，首发于码上开学官网 。 引子 找到那把三叉戟，你便能号令整个海洋。     ——《海王》  为什么需要新语言Java是当今世界最流行的工业级语言，有着非常成熟的生态和广泛的开发群体。当初Android选择Java作为开发语言，也是为了吸引Java程序员这个世界上最大的开发群体。最早的一批Android程序员可能已经用Java写了近十年Android程">
+<meta name="twitter:creator" content="@qq157755587">
+    
+    
+        
+            <meta property="fb:admins" content="100007345843333" />
+        
+    
+    
+        <meta property="og:image" content="https://www.gravatar.com/avatar/f8ec0fb50db171bd93814bde2d3b9400?s=640"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style.min.css">
+    <!--STYLES END-->
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-65290548-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</head>
+
+    <body>
+        <div id="blog">
+            <header id="header" data-behavior="1">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">赵元杰的技术博客</a>
+    </h1>
+    
+        <a class="header-right-picture" href="/#about">
+            <img class="header-picture" src="https://www.gravatar.com/avatar/f8ec0fb50db171bd93814bde2d3b9400?s=90"/>
+        </a>
+    
+</header>
+            <nav id="sidebar" data-behavior="1">
+    
+    <div class="sidebar-profile">
+        <a href="/#about">
+            
+            <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/f8ec0fb50db171bd93814bde2d3b9400?s=90"/>
+            
+        </a>
+        <span class="sidebar-profile-name">赵元杰</span>
+    </div>
+    
+    
+    <ul class="sidebar-buttons">
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link "
+                    href="/ 
+                    ">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc">Home</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link "
+                    href="/all-categories
+                            ">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc">Categories</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link "
+                    href="/all-tags
+                            ">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc">Tags</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link "
+                    href="/all-archives
+                            ">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc">Archives</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link st-search-show-outputs"
+                    href="#search
+                            ">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-search"></i>
+                    <span class="sidebar-button-desc">Search</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link "
+                    href="#about
+                            ">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc">About me</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+    <ul class="sidebar-buttons">
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="https://github.com/qq157755587" target="_blank">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                    <span class="sidebar-button-desc">GitHub</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="https://gist.github.com/qq157755587" target="_blank">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-github-square"></i>
+                    <span class="sidebar-button-desc">Gist</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="http://stackoverflow.com/users/2298397" target="_blank">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
+                    <span class="sidebar-button-desc">Stack Overflow</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="https://twitter.com/qq157755587" target="_blank">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+                    <span class="sidebar-button-desc">Twitter</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="https://www.facebook.com/profile.php?id=100007345843333" target="_blank">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-facebook"></i>
+                    <span class="sidebar-button-desc">Facebook</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="https://plus.google.com/u/0/114790614951350139361/posts" target="_blank">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-google-plus"></i>
+                    <span class="sidebar-button-desc">Google +</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="https://www.linkedin.com/profile/view?id=267600087" target="_blank">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+                    <span class="sidebar-button-desc">Linked In</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link " href="mailto:qq157755587@gmail.com" target="_blank">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-envelope-o"></i>
+                    <span class="sidebar-button-desc">Mail</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+    <ul class="sidebar-buttons">
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link "
+                    href="/atom.xml
+                            ">
+            
+                    <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                    <span class="sidebar-button-desc">RSS</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+            <div id="main" data-behavior="1">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+        <div class="post-header main-content-wrap">
+    
+        <h1 class="post-title" itemprop="headline">kotlin 开篇</h1>
+    
+    <div class="post-meta">
+    <time  itemprop="datePublished" content="Thu Jun 27 2019 16:50:47 GMT+0800">
+        Jun 27, 2019
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/Kotlin/">Kotlin</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown main-content-wrap" itemprop="articleBody">
+        
+            <h1 id="Kotlin-开篇"><a href="#Kotlin-开篇" class="headerlink" title="Kotlin 开篇"></a>Kotlin 开篇</h1><p>这篇文章是为「码上开学」写的，首发于<a href="https://kaixue.io/kotlin-overview/" target="_blank" rel="noopener">码上开学官网 </a>。</p>
+<h2 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h2><blockquote>
+<p>找到那把三叉戟，你便能号令整个海洋。     ——《海王》</p>
+</blockquote>
+<h2 id="为什么需要新语言"><a href="#为什么需要新语言" class="headerlink" title="为什么需要新语言"></a>为什么需要新语言</h2><p>Java是当今世界最流行的工业级语言，有着非常成熟的生态和广泛的开发群体。当初Android选择Java作为开发语言，也是为了吸引Java程序员这个世界上最大的开发群体。最早的一批Android程序员可能已经用Java写了近十年Android程序了，各种实践方法也比较成熟了。那么今天我们为什么还需要一门新语言呢？这就要从Java的发行历史说起了。</p>
+<h2 id="Java历史"><a href="#Java历史" class="headerlink" title="Java历史"></a>Java历史</h2><table>
+<thead>
+<tr>
+<th>Java版本</th>
+<th>发布日期</th>
+<th>重要功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JDK 1.0</td>
+<td>Jan 1996</td>
+<td>Initial release</td>
+</tr>
+<tr>
+<td>JDK 1.1</td>
+<td>Feb 1997</td>
+<td>Reflection, JDBC, Inner Classes</td>
+</tr>
+<tr>
+<td>J2SE 1.2</td>
+<td>Dec 1998</td>
+<td>Collection, JIT</td>
+</tr>
+<tr>
+<td>J2SE 1.3</td>
+<td>May 2000</td>
+<td>HotSpot JVM, JNDI</td>
+</tr>
+<tr>
+<td>J2SE 1.4</td>
+<td>Feb 2002</td>
+<td>assert, Regular, NIO</td>
+</tr>
+<tr>
+<td>J2SE 5.0</td>
+<td>Sep 2004</td>
+<td>Generics, Annotations, Autoboxing/unboxing, Concurrency</td>
+</tr>
+<tr>
+<td>Java SE 6</td>
+<td>Dec 2006</td>
+<td>JDBC 4.0, Java Compiler API, New GC</td>
+</tr>
+<tr>
+<td>Java SE 7</td>
+<td>July 2011</td>
+<td>Strings in switch, Diamond operator, Resource management</td>
+</tr>
+<tr>
+<td>Java SE 8</td>
+<td>Mar 2014</td>
+<td>Lambda, Functional interface, Optionals, New Date and Time API</td>
+</tr>
+<tr>
+<td>Java SE 9</td>
+<td>Sep 2017</td>
+<td>Multi-gigabytes heaps, Java Module System</td>
+</tr>
+</tbody>
+</table>
+<p>其实从Java 5开始，Java就是一门很完备的工业级语言了，生态也非常成熟，各种框架层出不穷。但是后续的Java 6和Java 7只是在Java 5基础上添加了一些功能和语法糖，根本算不上大版本更新，我觉得版本号定为5.1，5.2可能更合适。如果你稍微了解过同期的C#，看看Lambda和LINQ，你大概也会对Java怒其不争吧。</p>
+<p>直到2014年Java 8正式发布，才算是Java语言的一次大更新，加入了呼声很高的Lambda和stream。可是等等，Android是哪一年发布的？<a href="https://en.wikipedia.org/wiki/Android_version_history" target="_blank" rel="noopener">2008年</a>！所以Android是以Java 6来进行开发。虽然从Android Studio 3.0开始可以<a href="https://developer.android.com/studio/write/java8-support" target="_blank" rel="noopener">使用部分Java 8特性进行开发</a>了，但是非常好用的<a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html" target="_blank" rel="noopener">stream</a>只能在Android 7.0以上使用（即minSdkVersion = 24）。受困于Android版本碎片化，我们只能放弃。那么用Java 6写代码到底有什么问题呢？</p>
+<h2 id="从一道算法题说起"><a href="#从一道算法题说起" class="headerlink" title="从一道算法题说起"></a>从一道算法题说起</h2><p>请听题：有一个英文小写单词列表List\&lt;String>，要求将其按首字母分组（key为 ‘a’ - ‘z’），并且每个分组内的单词列表都是按升序排序，得到一个Map\&lt;Character, List\&lt;String>>。请尝试用10行以内Java 6.0代码完成。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; keywords = ...;</span><br><span class="line">Map&lt;Character, List&lt;String&gt;&gt; result = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"><span class="keyword">for</span> (String k: keywords) &#123;</span><br><span class="line">    <span class="keyword">char</span> firstChar = k.charAt(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">if</span> (!result.contains(firstChar)) &#123;</span><br><span class="line">        result.put(firstChar, <span class="keyword">new</span> ArrayList&lt;String&gt;());</span><br><span class="line">    &#125;</span><br><span class="line">    result.get(firstChar).add(k);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (List&lt;String&gt; list: result.values()) &#123;</span><br><span class="line">    Collections.sort(list);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实际上已经超过10行了。我们再看看业界标杆C#是怎么写的</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">List&lt;<span class="keyword">string</span>&gt; keywords = …;</span><br><span class="line"><span class="keyword">var</span> result = keywords</span><br><span class="line">        .GroupBy(k =&gt; k[<span class="number">0</span>])</span><br><span class="line">        .ToDictionary(</span><br><span class="line">            g =&gt; g.Key,</span><br><span class="line">            g =&gt; g.OrderBy(k =&gt; k).ToList());</span><br></pre></td></tr></table></figure>
+<p>为了代码可读性，我添加了一些换行。如果你愿意的话，写成一行也行。可以明显看出，对比当今先进语言，Java 6已经无法让人愉快的写代码。用Java 6写代码时，我们脑子里想的不是要<strong>做什么</strong>，而是<strong>怎么做</strong>。</p>
+<h2 id="Java平台"><a href="#Java平台" class="headerlink" title="Java平台"></a>Java平台</h2><p>我们平时说Java，其实包含了两个不同的概念：一是Java语言本身，二是Java虚拟机，即JVM。虽然上面吐槽了Java语言本身的历史包袱，但是JVM还是非常优秀的，它有非常多的优点：</p>
+<ul>
+<li>跨平台</li>
+<li>自动垃圾回收</li>
+<li>运行速度快（你没看错。虽然Java程序速度没有C/C++快，但是在所有编程语言中Java属于速度快的那一拨。大数据框架<a href="https://hadoop.apache.org/" target="_blank" rel="noopener">Hadoop</a>便是用Java开发，能顺利处理海量数据。）</li>
+</ul>
+<p>我们知道Java代码编译后会生成<a href="https://en.wikipedia.org/wiki/Java_bytecode" target="_blank" rel="noopener">字节码</a>，然后字节码在JVM中运行注意Android中的虚拟机并不是JVM，而是Dalvik/ART，但也是编译成字节码。那么有没有可能新<strong>创造</strong>一门语言，编译的时候也生成字节码，然后在JVM中运行呢？这样既可以摆脱Java的历史包袱，又能享受到JVM和成熟Java框架的各种好处！答案当然是肯定的！实际上Java平台已经衍生出<a href="https://www.scala-lang.org/" target="_blank" rel="noopener">Scala</a>、<a href="https://clojure.org/" target="_blank" rel="noopener">Clojure</a>、<a href="http://groovy-lang.org/" target="_blank" rel="noopener">Groovy</a>等比较流行的语言了。而今天我们要讲的<a href="http://kotlinlang.org" target="_blank" rel="noopener">Kotlin</a>则是Java平台中的新贵，出自大名鼎鼎的<a href="https://www.jetbrains.com/" target="_blank" rel="noopener">JetBrains</a>公司。打开他们的官网你就会发现，很多著名的IDE（比如<a href="https://www.jetbrains.com/idea/" target="_blank" rel="noopener">IntelliJ</a>、<a href="https://www.jetbrains.com/ruby/" target="_blank" rel="noopener">RubyMine</a>、<a href="https://www.jetbrains.com/webstorm/" target="_blank" rel="noopener">WebStorm</a>）都是出自这家公司。IntelliJ是当今最主流的Java IDE，JetBrains公司在开发IntelliJ的过程中积累的经验令Kotlin的诞生显得水到渠成。而Google在2017年的I/O大会上<a href="https://techcrunch.com/2017/05/17/google-makes-kotlin-a-first-class-language-for-writing-android-apps/" target="_blank" rel="noopener">宣布</a>Kotlin成为Android开发的<a href="https://developer.android.com/kotlin/" target="_blank" rel="noopener">官方编程语言</a>后，更是令Kotlin一夜之间成为最受瞩目的编程语言之一。那么我们来看看Kotlin会给我们带来哪些好处吧。</p>
+<h2 id="Kotlin带来的好处"><a href="#Kotlin带来的好处" class="headerlink" title="Kotlin带来的好处"></a>Kotlin带来的好处</h2><h3 id="Data-Class"><a href="#Data-Class" class="headerlink" title="Data Class"></a>Data Class</h3><p>假设你在做一个金融交易系统，需要定义一个Class来表示每一笔支付，包含金额和币种。这里有一个简单的例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Purchase</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> String currency;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> price; <span class="comment">//为了便于演示，这里将价格设为整数类型</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>看起来不错。但是作为一个经验丰富的程序员，你一眼就发现了潜藏的问题。一个金融系统，一定是要保证每笔交易的正确性的，你肯定不希望object中的currency和price的值在某个模块里面被粗心的人修改了。所以你需要一个Immutable Class，即不可更改的类。于是你做了如下修改：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Purchase</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String currency;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> price;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Purchase</span><span class="params">(String currency, <span class="keyword">int</span> price)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.currency = currency;</span><br><span class="line">        <span class="keyword">this</span>.price = price;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getCurrency</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> <span class="keyword">this</span>.currency; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getPrice</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> <span class="keyword">this</span>.price; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>你将currency和price定义为private field，通过构造方法来赋值，并且只暴露get方法。这样就不用担心数据被其他人误修改了。完美！可是等等，这就够了吗？熟读《Java编程思想》的你立刻想起，一个完备的Class还需要重写<code>equals()</code>、<code>hashCode()</code>和<code>toString()</code>方法！于是你又添加了一些代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Purchase</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span> </span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我就问你烦不烦:) 仅仅是表示金额和币种，怎么要写那么多代码？如果有十几个字段，那还不得上百行代码呀？！请看Kotlin中优雅的实现：</p>
+<figure class="highlight kt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">data</span> <span class="class"><span class="keyword">class</span> <span class="title">Purchase</span></span>(<span class="keyword">val</span> currency: String, <span class="keyword">val</span> price: int)</span><br></pre></td></tr></table></figure>
+<p>没了。</p>
+<p>一行代码搞定:)</p>
+<p>关键字<code>val</code>会自动为currency和price创建不可更改的field，而<code>data</code>则会帮我们自动生成equals()、hashCode()和toString()方法！这还不是全部，看下面的代码：</p>
+<figure class="highlight kt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> iPhone8 = Purchase(“CNY”, <span class="number">5888</span>)</span><br><span class="line"><span class="keyword">val</span> iPhoneX = iPhone8.copy(price = <span class="number">8888</span>)</span><br></pre></td></tr></table></figure>
+<p>看到<code>copy</code>方法了吗？是不是巨好用？这也是data class为我们自动生成的，方便吧:)</p>
+<h3 id="Extension-Functions"><a href="#Extension-Functions" class="headerlink" title="Extension Functions"></a>Extension Functions</h3><p>Kotlin中的<a href="http://kotlinlang.org/docs/reference/extensions.html" target="_blank" rel="noopener">Extension</a>类似于Objective-C中的<a href="https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/Category.html" target="_blank" rel="noopener">Category</a>，可以帮助我们扩展已有的Class，而无需继承这个Class，无论我们能不能访问源码。这对于系统Class以及一些第三方library中的Class特别有帮助。</p>
+<p>随着项目规模的扩大，你的代码里肯定少不了一系列Utils类（比如<code>FileUtils.java</code>，<code>DateUtils.java</code>）来封装一些繁琐但常用的功能。比如在Android开发中，如果我们要动态的调整一个View的宽高，必须要先将dp转为px，所以我们会有这样一个方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ScreenUtil</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">dip2px</span><span class="params">(<span class="keyword">float</span> dipValue)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>) (dipValue * density + <span class="number">0.5f</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后这样使用：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">layoutParams.width = ScreenUtil.dip2px(<span class="number">16F</span>)</span><br></pre></td></tr></table></figure>
+<p>这样看起来没什么不对，只是不太符合人的阅读习惯。看看用Extension能帮我们做些什么：</p>
+<figure class="highlight kt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="built_in">Int</span>.<span class="title">toPx</span><span class="params">()</span></span>: <span class="built_in">Int</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> ScreenUtil.dip2px(<span class="keyword">this</span>.toFloat())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们给整数类型添加了一个Extension Function，叫做<code>toPx</code>，用来实现dp到px的转换。然后优雅的调用：</p>
+<figure class="highlight kt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">layoutParams.width = <span class="number">16</span>.toPx()</span><br></pre></td></tr></table></figure>
+<p>可读性是不是好多了🙂。你可能会想，Extension一个一个自己写也挺麻烦的，有没有大神把常用的Extension Functions封装成一个library啊？有的，Google爸爸已经帮我们考虑到了😘。请参看<a href="https://developer.android.com/kotlin/ktx" target="_blank" rel="noopener">Android KTX</a>项目。这个项目是<a href="https://developer.android.com/jetpack/" target="_blank" rel="noopener">Android Jetpack</a>的一部分，而Jetpack也是我们接下来要分享的内容。</p>
+<h3 id="Null-Safety"><a href="#Null-Safety" class="headerlink" title="Null Safety"></a>Null Safety</h3><p>这是一个值得吹上三天三夜的革新。在Quora上有这样一个问题：<a href="https://www.quora.com/Why-was-the-Null-Pointer-Exception-in-Java-called-a-billion-dollar-mistake" target="_blank" rel="noopener">为什么空指针异常被称为10亿美金的错误？</a>相信每一个Java程序员都对这个问题深有体会。看看我们为了避免程序崩溃，不得不写多么丑陋的代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (a != <span class="keyword">null</span> &amp;&amp; a.b != <span class="keyword">null</span> &amp;&amp; a.b.c != <span class="keyword">null</span>) &#123;</span><br><span class="line">    println(a.b.c.toString());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样写有两个问题，一是代码很丑陋，二是本少爷很容易忘记做空指针检查啊😤！！！Java 8引入了<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html" target="_blank" rel="noopener">Optional</a>来解决这个问题，比自己检查空指针要稍微优雅一点，但仍然有许多不必要的代码包装。</p>
+<p>Kotlin的类型系统从一开始就致力于避免空指针异常。我们在Kotlin中定义变量时可以指定它为可空类型（Nullable Type）和不可空类型（Non-Null Type）。</p>
+<figure class="highlight kt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a: String = <span class="string">"abc"</span> <span class="comment">// 不可空</span></span><br><span class="line">a = <span class="literal">null</span> <span class="comment">// 编译报错</span></span><br><span class="line">print(a.length) <span class="comment">// 没问题</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b: String? = <span class="string">"abc"</span> <span class="comment">// 可空</span></span><br><span class="line">b = <span class="literal">null</span> <span class="comment">// 没问题</span></span><br><span class="line">print(b.length) <span class="comment">// 编译报错</span></span><br><span class="line">print(b?.length) <span class="comment">// 没问题</span></span><br></pre></td></tr></table></figure>
+<p>上例的a是Non-Null，而b是Nullable。他们的唯一区别是定义的时候b的<code>String</code>后面加了个问号<code>?</code>，代表它是Nullable的。只有Nullable类型可以赋值为null。调用Nullable对象的方法时，需要加一个问号，像<code>b?.length</code>。如果b为null，那么<code>print(b?.length)</code>这行代码不会被执行。这样设计有什么好处呢？回到我们上一个例子，如果我们将<code>a</code>，<code>a.b</code>，<code>a.b.c</code>都定义为Nullable，那么就可以这样写：</p>
+<figure class="highlight kt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">println(a?.b?.c?.toString())</span><br></pre></td></tr></table></figure>
+<p>如果它们中间任意一个为null，那么 <code>a?.b?.c?.toString()</code> 这个 chain 就会返回 <strong>null</strong> 。是不是很强大很方便？理论上讲，只要我们的类型定义合理，那么90%的空指针异常都是能避免。为什么我不敢说100%？因为有时候我们看设计文档确定某个值绝对不可能为null，于是给它定义为Non-Null，结果程序运行时偏偏就传过来一个null……😂</p>
+<h3 id="Courtines"><a href="#Courtines" class="headerlink" title="Courtines"></a>Courtines</h3><p>Android开发中多线程处理一直是一个难点，稍微不小心就容易出问题。你可能已经学习过<a href="https://github.com/ReactiveX/RxJava" target="_blank" rel="noopener">RxJava</a>，并在项目中成功使用RxJava来处理线程问题。这非常好。但是如果你的业务逻辑并没有复杂到必须用RxJava来解决，你应该看看Kotlin中的<a href="https://kotlinlang.org/docs/reference/coroutines.html" target="_blank" rel="noopener">Courtines</a>。Courtines通常翻译成_协程<em>，在<a href="https://www.lua.org/" target="_blank" rel="noopener">Lua</a>等程序语言中已经有着广泛的应用。它的概念稍微有些复杂，我们可以暂时认为它是一种</em>无需锁_并且<em>没有线程切换开销</em>的轻量级线程。</p>
+<p>我们看一个例子，假设我需要从网络取回来一些数据，然后保存到数据库，那么传统的异步回调写法是这样的：</p>
+<figure class="highlight kt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">networkRequest &#123; result -&gt;</span><br><span class="line">   databaseSave(result) &#123; rows -&gt;</span><br><span class="line">     <span class="comment">// Result saved</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>而用Courtines的写法是这样的：</p>
+<figure class="highlight kt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> result = networkRequest()</span><br><span class="line">databaseSave(result)</span><br><span class="line"><span class="comment">// Result saved</span></span><br></pre></td></tr></table></figure>
+<p>你可能已经发现了，这段代码根本不关心线程如何切换，只关心我到底要实现什么功能。实际上Courtines背后远比这要复杂，想要熟练使用需要经历一些学习曲线，但好在曲线并不算陡峭。我们后面会有专门文章来讲解如合使用Courtines。如果你已经激动的等不及了（和第一次知道Courtines时的我一样），可以先跟着Google Codelabs中的<a href="https://codelabs.developers.google.com/codelabs/kotlin-coroutines/#0" target="_blank" rel="noopener">教程</a>来练练手。</p>
+<h3 id="与Java的交互"><a href="#与Java的交互" class="headerlink" title="与Java的交互"></a>与Java的交互</h3><p>虽然前面我们讲到，Java平台上的语言都会编译成字节码，但这并不代表所有语言都能与Java无缝交互。比如<a href="http://lampwww.epfl.ch/~michelou/scala/using-scala-from-java.html" target="_blank" rel="noopener">Scala和Java的交互</a>就非常复杂。幸运的是，JetBrains从一开始就将与Java的交互性作为Kotlin的设计目标之一。无论是从Java调用Kotlin，还是从Kotlin调用Java，都非常自然，没有什么障碍。这意味着我们可以任意使用Java丰富的第三方库，也可以在现有的Java工程基础上用Kotlin添加新的功能。万一你遇到某些特殊情况，有一段逻辑用Kotlin搞不定（我写这篇文章时就遇到一个），可以把这段逻辑抽出来用Java写。有Java兜底，我们就能放心的为项目引入Kotlin了。</p>
+<h3 id="无障碍升级"><a href="#无障碍升级" class="headerlink" title="无障碍升级"></a>无障碍升级</h3><p>我们前面讲到，要想在Android开发中使用Java 8中的stream，需要设定minSdkVersion = 24。如果将来要使用Java 9的新特性，恐怕又得等Android版本更新了。Kotlin则不同，你可以把它当作一个集成到项目中的第三方library，可以随时升级到最新版本！这意味着Kotlin将来推出的更多新特性都能应用到所有Android项目中！</p>
+<h2 id="迁移到Kotlin会遇到什么问题"><a href="#迁移到Kotlin会遇到什么问题" class="headerlink" title="迁移到Kotlin会遇到什么问题"></a>迁移到Kotlin会遇到什么问题</h2><p>前面讲了Kotlin的这么多好处，但要知道世上没有十全十美的语言。就Kotlin而言，目前社区反映比较多的问题是可见性修饰符（Visibility Modifiers）。我们知道Java中有四种访问权限：<code>public</code>，<code>protected</code>，<code>private</code>和<code>package-private</code>。其中package-private是指在同一个包名下可见，在library开发中非常方便。而在Kotlin中没有了package-private，取而代之的是<code>internal</code>，即在同一个<em>模块（Module）</em>内可见。这样我们在设计library时必须对可见性控制有更周全的考虑。为Android开发library，不可避免的要重写系统方法。如果你用重写了一个Java中的<code>package-private</code>方法，那么不好意思，这个方法会变成<code>public</code>🤣，原本并不想暴露出来的方法暴露了……</p>
+<p>如果你主要做应用开发，那么目前已经没有什么坑了。Google已经逐渐用Kotlin重写Android文档中的所有例子，Github上用Kotlin开发的项目也在飞快增长。社区方面，在StackOverflow做的<a href="https://insights.stackoverflow.com/survey/2018/" target="_blank" rel="noopener">2018年度调查</a>中，Kotlin更是一举登上最受欢迎语言榜第二名！就像前面讲的，万一有问题还有Java兜底。所以你唯一需要考虑的可能就是团队学习成本。好在Kotlin是一门非常简易、现代的语言，相信做这个决定并不困难。</p>
+<h2 id="回到最开始"><a href="#回到最开始" class="headerlink" title="回到最开始"></a>回到最开始</h2><p>我想肯定有好事的人要问，最开始那个算法题用Kotlin怎么写呢？</p>
+<figure class="highlight kt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> keywords = arrayOf(<span class="string">"apple"</span>, <span class="string">"app"</span>, <span class="string">"alpha"</span>, ...)</span><br><span class="line"><span class="keyword">val</span> result = keywords</span><br><span class="line">        .groupBy &#123; it[<span class="number">0</span>] &#125;</span><br><span class="line">        .mapValues &#123; it.value.sorted() &#125;</span><br></pre></td></tr></table></figure>
+<p>你还在等什么？</p>
+
+        
+        
+    </div>
+    <div class="post-footer main-content-wrap">
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/08/12/custom-tabs-best-practices/" data-tooltip="Chrome Custom Tabs最佳实践">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qq157755587.github.io/2019/06/27/kotlin-opening/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qq157755587.github.io/2019/06/27/kotlin-opening/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qq157755587.github.io/2019/06/27/kotlin-opening/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+        
+            <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2019 赵元杰. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/08/12/custom-tabs-best-practices/" data-tooltip="Chrome Custom Tabs最佳实践">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://qq157755587.github.io/2019/06/27/kotlin-opening/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qq157755587.github.io/2019/06/27/kotlin-opening/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://qq157755587.github.io/2019/06/27/kotlin-opening/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://qq157755587.github.io/2019/06/27/kotlin-opening/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://qq157755587.github.io/2019/06/27/kotlin-opening/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://qq157755587.github.io/2019/06/27/kotlin-opening/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        <div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="https://www.gravatar.com/avatar/f8ec0fb50db171bd93814bde2d3b9400?s=110"/>
+        
+            <h4 id="about-card-name">赵元杰</h4>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>Andoird工程师</p>
+
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                Wuhan
+            </h5>
+        
+    </div>
+</div>
+        <div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/script.min.js"></script>
+<!--SCRIPTS END-->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'zhaoyuanjie';
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+    <script type="text/javascript">
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+                (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+            e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','SU2oWudfBg2KDR_wiXjF','2.0.0');
+    </script>
+
+
+</html>
